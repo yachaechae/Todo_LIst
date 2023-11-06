@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    font-family: 'Pretendard-Regular';}
+body {
+    max-width: 1200px;
+    min-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+.addTodoForm{
+    display: flex;
+    justify-content: center;
+    padding: 30px 30px 15px;
+    background: #eaeaea;
+    align-items: center;
+}
+.addTodoForm .inputBox{
+    position: relative;
+    margin: 10px;
+}
+.addTodoForm .inputBox input{
+    border: none !important;
+    border-bottom: 1px solid #252A34;
+    padding-bottom: 10px;
+    background: transparent;
+    z-index: 5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addTodoForm .inputBox input:focus{
+    outline: none;
+}
+.addTodoForm .inputBox label{
+    position: absolute;
+    color: #252A34;
+    left: 10px;
+    bottom: 8px;
+    transition: all .2s;
+}
+.addTodoForm .inputBox span{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #252A34;
+    width: 0;
+    height: 1px;
+    border: 1px;
+    transition: 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.addTodoForm .inputBox input:focus ~ label, .addTodoForm .inputBox input:valid ~ label{
+    bottom: 40px;
+    color: #252A34;
+    font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.addTodoForm .inputBox input:focus ~ span, .addTodoForm .inputBox input:valid ~ span{
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.addTodoForm .addBtn {
+    cursor: pointer;
+    border: 2px solid #0095FF;
+    border-radius: 30px;
+    color: #252A34;
+    padding: 10px;
+    font-weight: 600;
+}
+.addTodoForm .addBtn:hover{
+    background-color: #0095FF;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.todoContainer .todoList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24%, auto));
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.todoContainer .todoList .todoCard{
+    border: 1px solid #252A34;
+    padding: 20px;
+}
+.todoContainer .todoList .todoCard .todoTitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.todoContainer .todoList .todoCard .todoContent{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+}
+.todoContainer .todoList .todoCard .btnGroup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todoContainer .todoList .todoCard .btnGroup button{
+    cursor: pointer;
+    color: #252A34;
+    padding: 5px;
+    font-weight: 600;
+    width: 45%;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.todoContainer .todoList .todoCard .btnGroup button.delete{
+    border: 2px solid #FF1C08;
+}
+.todoContainer .todoList .todoCard .btnGroup button.delete:hover{
+    background-color: #FF1C08;
+    color: #fff;
+    transition: 0.3s;
+}
+.todoContainer .todoList .todoCard .btnGroup button.done{
+    border: 2px solid #00C6BB;
+}
+.todoContainer .todoList .todoCard .btnGroup button.done:hover{
+    background-color: #00C6BB;
+    color: #fff;
+    transition: 0.3s;
 }

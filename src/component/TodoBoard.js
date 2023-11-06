@@ -24,8 +24,8 @@ export default function TodoBoard({todoList, setTodoList}) {
 
     return (
         <div className="todoContainer">
-            <h3 className="listTitle">Working🧑‍💻</h3>
-            <div className="todoCard">
+            <h2 className="listTitle">Working🧑‍💻</h2>
+            <div className="todoList">
                 {todoList.map((todoItem) => {
                     console.log(todoItem);
                     if (!todoItem.isDone) {
@@ -33,8 +33,8 @@ export default function TodoBoard({todoList, setTodoList}) {
                     } else return null;
                 })}
             </div>
-            <h3 className="listTitle">Done!🎊</h3>
-            <div className="todoCard">
+            <h2 className="listTitle">Done!🎊</h2>
+            <div className="todoList">
                 {todoList.map((todoItem) => {
                     if (todoItem.isDone) {
                         return <TodoCard todo={todoItem} deleteTodo={deleteTodo} doneTodo={doneTodo}/>;

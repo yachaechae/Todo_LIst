@@ -40,22 +40,27 @@ function App() {
             </header>
             <form onSubmit={addTodo} className="addTodoForm">
                 <div className="inputBox">
-                    <label htmlFor="todoTitle">제목</label>
                     <input
                         type="text"
                         name="todoTitle"
-                        placeholder="제목을 입력해주세요"
                         value={todo.todoTitle}
                         onChange={todoText}
+                        required
+                        autoFocus
                     />
-                    <label htmlFor="todoContent">내용</label>
+                    <label htmlFor="todoTitle">제목</label>
+                    <span></span>
+                </div>
+                <div className="inputBox">
                     <input
                         type="text"
                         name="todoContent"
-                        placeholder="내용을 입력해주세요"
                         value={todo.todoContent}
                         onChange={todoText}
+                        required
                     />
+                    <label htmlFor="todoContent">내용</label>
+                    <span></span>
                 </div>
                 <button className="addBtn">추가하기</button>
             </form>
