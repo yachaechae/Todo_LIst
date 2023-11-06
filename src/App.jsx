@@ -42,6 +42,7 @@ function App() {
                 <div className="inputBox">
                     <input
                         type="text"
+                        id="todoTitle"
                         name="todoTitle"
                         value={todo.todoTitle}
                         onChange={todoText}
@@ -54,6 +55,7 @@ function App() {
                 <div className="inputBox">
                     <input
                         type="text"
+                        id="todoContent"
                         name="todoContent"
                         value={todo.todoContent}
                         onChange={todoText}
@@ -65,7 +67,7 @@ function App() {
                 <button className="addBtn">추가하기</button>
             </form>
 
-            <TodoBoard todoList={todoList} setTodoList={setTodoList} />
+            <TodoBoard todoList={todoList} setTodoList={setTodoList}/>
         </div>
     );
 }
